@@ -13,22 +13,31 @@ use App\Models\Product;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//for products.blade.php
 Route::get('/', function () {
-    return view('products');
+    $product1 = Product::all();
+    return view('products', [ 'products' => $product1]);
 });
-Route::get('/product', function () {
-    return view('product');
+//for product.blade.php
+Route::get('/product/{product}', function ($id) {
+    $product = Product::find($id);
+    return view('product', ['product' => $product]);
 });
 
 Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/create_products', function () {
+Route::get('/create_product', function () {
     Product::create([
-        'product_name' => 'Laptop2',
-        'product_desc' => 'This is very nice nice product.',
-        'price' => '10000'
+        'product_name' => 'Laptop100',
+        'product_desc' => 'This is the 100',
+        'price' => '100'
     ]);
+});
+
+
+Route::get('/get_products',function(){
+    $products = Product::get();
+    return $products;
 });

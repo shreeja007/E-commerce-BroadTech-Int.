@@ -7,7 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>enterd</h1>
+    <h1>{{ $product['product_name'] }}</h1>
+    <p>{{ $product['product_desc'] }}</p>
     <a href="/">GO ome</a>
 </body>
 </html>

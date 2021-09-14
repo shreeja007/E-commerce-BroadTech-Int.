@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="\resources\css\app.css">
 </head>
 <body>
-    <article>
-        <h1> <a href="/product"> Product 1 </a></h1>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim natus minus velit alias dolor quibusdam, atque amet eius reprehenderit quod praesentium quaerat repudiandae culpa assumenda tenetur odio sint nesciunt aut nam debitis beatae dolorum.</p>
-        <h1>Product 2</h1>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim natus minus velit alias dolor quibusdam, atque amet eius reprehenderit quod praesentium quaerat repudiandae culpa assumenda tenetur odio sint nesciunt aut nam debitis beatae dolorum.</p>
-        <h1>Product 3</h1>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim natus minus velit alias dolor quibusdam, atque amet eius reprehenderit quod praesentium quaerat repudiandae culpa assumenda tenetur odio sint nesciunt aut nam debitis beatae dolorum.</p>
-    </article>
+    <h1>Products</h1>
+
+    @foreach($products as $product)
+        <article>
+            <h2><a href="/product/{{$product['id']}}">{{ $product['product_name']}}</a></h2>
+            <p>{{ $product['product_desc']}}</p>
+        </article>
+    @endforeach
 </body>
 </html>
